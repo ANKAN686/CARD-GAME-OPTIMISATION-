@@ -1,0 +1,109 @@
+## 🃏 Game Overview
+
+**THE CARD MONEY** is played over a fixed duration of **5 rounds**. The primary objective is to accumulate the maximum number of points by strategically winning rounds with high-value card pairs and superior betting.
+
+## 🛠️ Core Logic & Components
+
+### 1. Player Initialization
+
+* 
+**Player Count**: The game supports **5 to 7 players**.
+
+
+* 
+**Initial Purse**: Every player starts with **400 units** of purse money.
+
+
+* 
+**Starting Score**: All players begin with **0 points**.
+
+
+
+### 2. Card Values
+
+Points are awarded based on the specific pairs played during a round:
+
+* 
+**Face Cards and Ace**: +60 points.
+
+
+* 
+**Cards 6 to 10**: +40 points.
+
+
+* 
+**Cards 2 to 5**: +20 points.
+
+
+* 
+**Jokers**: Act as wild cards and can represent any card to form a pair.
+
+
+
+### 3. Betting Mechanics
+
+* 
+**Hidden Bets**: All bets are submitted secretly to the "banker" (the game logic).
+
+
+* 
+**Multiples**: Every bet amount must be a **multiple of 20**.
+
+
+* 
+**Passing**: A player may choose to "PASS" if they lack a pair or wish to strategically withhold a bet.
+
+
+
+---
+
+## 🔄 Round Resolution Logic
+
+Each round follows a strict calculation sequence to determine winners and losers:
+
+1. 
+**Collection**: The system gathers bets and card pair values from all active players.
+
+
+2. 
+**Comparison**: The system identifies the **Highest Bet** and the **Lowest Bet** among those who played pairs.
+
+
+3. **Scoring (The Winner)**:
+* The player with the highest bet receives **positive points** equal to the point value of their played pair.
+
+
+* The amount bet is deducted from their purse.
+
+
+
+
+4. **Penalty (The Loser)**:
+* The player with the lowest bet receives **negative points** equal to the point value of their played pair.
+
+
+
+
+5. **Penalty (Passing)**:
+* Any player who submits a "PASS" chit is automatically penalized **-20 points**.
+
+
+
+
+
+---
+
+## 🏁 Game End Conditions
+
+The game concludes under two scenarios:
+
+* 
+**Round Limit**: Completion of the **5th round**.
+
+
+* 
+**Bankruptcy**: A player is out of money (though they may continue to play with 0-money bets and suffer pass penalties).
+
+
+
+**Winning**: The player with the highest total points after 5 rounds is declared the winner.
